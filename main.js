@@ -9,11 +9,11 @@ function updateCountdown() {
   count = Math.max(0, count - decrement); // Ensure it doesn't go below 0
   countdownDiv.innerText = count.toFixed(1); // Update div with one decimal place
 
-  if (count < 30) {
+  if (count < 31) {
     countdownDiv.classList.add("thritySecs");
   }
 
-  if (count < 10) {
+  if (count < 11) {
     countdownDiv.classList.add("tenSecs");
   }
 

@@ -18,12 +18,23 @@ body {
 
 .thritySecs {
   color: yellow;
+  animation: grow-shrink 1s infinite alternate ease-in-out;
 }
 
 .tenSecs {
   color: red;
+  animation: grow-shrink 0.5s infinite alternate ease-in-out;
 }
 
 .refresh {
   display: none;
+}
+
+@keyframes grow-shrink {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
