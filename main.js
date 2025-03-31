@@ -32,8 +32,10 @@ function startCountdown() {
           clearInterval(resetInterval)
           resetCountdown()
         } else {
-          if (resetCountTime <= 5)
+          if (resetCountTime <= 5) {
+            stopAlarm() // Stop the alarm when reset
             countdownDiv.innerText = `RESETTING IN ${resetCountTime}`
+          }
         }
       }, 1000) // Update every second
 
@@ -56,7 +58,6 @@ function startCountdown() {
 }
 
 function resetCountdown() {
-  stopAlarm() // Stop the alarm when reset
   count = newRandomNumber() // Reset count
   countdownDiv.classList.remove('caution', 'warning')
   startCountdown()
@@ -82,6 +83,7 @@ function stopAlarm() {
 }
 
 startButton.textContent = 'Start the Game'
+startButton.classList.add('start-button')
 
 startButton.addEventListener('click', startCountdown)
 countdownDiv.appendChild(startButton)

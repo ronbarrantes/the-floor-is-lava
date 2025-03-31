@@ -17,6 +17,16 @@ body {
   max-width: 800px;
 }
 
+
+.start-button {
+  border: 1px solid red;
+  background: black;
+  font-size: 3rem;
+  padding: 1rem 3rem;
+  border-radius: 5rem; 
+  color: red;
+}
+
 .caution {
   color: yellow;
   animation: grow-shrink 1s infinite alternate ease-in-out;
