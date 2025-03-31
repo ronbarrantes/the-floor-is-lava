@@ -20,16 +20,16 @@ function startCountdown() {
     countdownDiv.innerText = count.toFixed(1);
 
     if (count < 5.9) {
-      countdownDiv.classList.add("fiveSecs");
+      countdownDiv.classList.add("warning");
     } else if (count < 15.9) {
-      countdownDiv.classList.add("fifteenSecs");
+      countdownDiv.classList.add("caution");
     }
   }, 100); // Update every 100ms
 }
 
 function resetCountdown() {
   count = newRandomNumber(); // Reset count
-  countdownDiv.classList.remove("fifteenSecs", "fiveSecs");
+  countdownDiv.classList.remove("caution", "warning");
   startCountdown();
 }
 
