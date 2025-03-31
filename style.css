@@ -16,12 +16,12 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.thritySecs {
+.fifteenSecs {
   color: yellow;
   animation: grow-shrink 1s infinite alternate ease-in-out;
 }
 
-.tenSecs {
+.fiveSecs {
   color: red;
   animation: grow-shrink 0.5s infinite alternate ease-in-out;
 }

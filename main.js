@@ -1,4 +1,5 @@
-let count = Math.random() * 20 + 5; // Random start value between 15 and 65
+const newRandomNumber = () => Math.random() * 20 + 5;
+let count = newRandomNumber(); // Random start value between 15 and 65
 const decrement = 0.1; // Decrease by 0.1 each time
 const countdownDiv = document.getElementById("countdown");
 const btn = document.getElementById("refresh");
@@ -12,23 +13,23 @@ function startCountdown() {
       clearInterval(countdownInterval);
       countdownDiv.innerText = "THE FLOOR IS LAVA";
       // btn.style.display = "block";
-      setTimeout(resetCountdown, 2000); // Restart after 2s
+      setTimeout(resetCountdown, 5000); // Restart after 2s
       return;
     }
 
     countdownDiv.innerText = count.toFixed(1);
 
-    if (count < 11) {
-      countdownDiv.classList.add("tenSecs");
-    } else if (count < 31) {
-      countdownDiv.classList.add("thritySecs");
+    if (count < 5.9) {
+      countdownDiv.classList.add("fiveSecs");
+    } else if (count < 15.9) {
+      countdownDiv.classList.add("fifteenSecs");
     }
   }, 100); // Update every 100ms
 }
 
 function resetCountdown() {
-  count = Math.random() * 50 + 15; // Reset count
-  countdownDiv.classList.remove("thritySecs", "tenSecs");
+  count = newRandomNumber(); // Reset count
+  countdownDiv.classList.remove("fifteenSecs", "fiveSecs");
   startCountdown();
 }
 
