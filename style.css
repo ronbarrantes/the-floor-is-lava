@@ -16,12 +16,12 @@ body {
   text-align: center;
 }
 
-.fifteenSecs {
+.caution {
   color: yellow;
   animation: grow-shrink 1s infinite alternate ease-in-out;
 }
 
-.fiveSecs {
+.warning {
   color: red;
   animation: grow-shrink 0.5s infinite alternate ease-in-out;
 }
