@@ -10,10 +10,11 @@ body {
 }
 
 #countdown {
-  font-size: 6rem;
+  font-size: 8rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   width: fit-content;
   text-align: center;
+  max-width: 800px;
 }
 
 .caution {
