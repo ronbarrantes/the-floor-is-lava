@@ -13,6 +13,18 @@ alarm.preload = 'auto' // Preload the audio
 
 let alarmPlaying = false // Track if the alarm is playing
 
+const beachBG = () => {
+  document.body.style.backgroundImage = "url('./media/beach.jpg')" // Replace with your image path
+}
+
+const lavaBG = () => {
+  document.body.style.backgroundImage = "url('./media/lava.jpg')" // Replace with your image path
+}
+
+const removeBG = () => {
+  document.body.style.backgroundImage = 'none'
+}
+
 function startCountdown() {
   countdownInterval = setInterval(() => {
     count -= decrement
@@ -25,6 +37,7 @@ function startCountdown() {
 
       let resetCountTime = 10 // Reset time in seconds
       countdownDiv.innerText = `THE FLOOR IS LAVA`
+      lavaBG()
 
       resetInterval = setInterval(() => {
         resetCountTime -= 1
@@ -34,6 +47,7 @@ function startCountdown() {
         } else {
           if (resetCountTime <= 5) {
             stopAlarm() // Stop the alarm when reset
+            beachBG()
             countdownDiv.innerText = `RESETTING IN ${resetCountTime}`
           }
         }
@@ -50,6 +64,7 @@ function startCountdown() {
       // Start playing the alarm exactly at 5 seconds
       if (!alarmPlaying) {
         playAlarm()
+        removeBG()
       }
     } else if (count < 15.9) {
       countdownDiv.classList.add('caution')
@@ -87,3 +102,8 @@ startButton.classList.add('start-button')
 
 startButton.addEventListener('click', startCountdown)
 countdownDiv.appendChild(startButton)
+beachBG()
+
+document.body.style.backgroundSize = 'cover' // Ensures the image covers the entire background
+document.body.style.backgroundRepeat = 'no-repeat' // Prevents the image from repeating
+document.body.style.backgroundPosition = 'center' // Centers the image
